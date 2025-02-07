@@ -31,6 +31,11 @@ func main() {
 		AllowCredentials: false,
 		MaxAge:           300}))
 
+	v1Router := chi.NewRouter()
+	// only respond to get request
+	v1Router.Get("/healthz", handlerReadiness)
+
+	router.Mount("/v1", v1Router)
 	// server object
 	server := &http.Server{
 		Handler: router,
