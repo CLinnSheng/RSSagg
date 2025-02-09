@@ -84,7 +84,7 @@ RSSagg/
 
 4. Run the database migrations:
     ```sh
-    goose up
+    goose $DB_URL up
     ```
 
 ### Running the Application
