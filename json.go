@@ -29,6 +29,7 @@ func respondWithError(w http.ResponseWriter, code int, msg string) {
 
 	type errResponse struct {
 		// specifying the key object will be error in the json format
+		// if not by default it will just follow the field id which is Error
 		Error string `json:"error"`
 	}
 
