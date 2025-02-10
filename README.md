@@ -38,6 +38,8 @@ RSSagg/
 │   │       ├── 004_feed_follows.sql
 │   │       ├── 005_feeds_lastfetchedat.sql
 │   │       └── 006_posts.sql
+│   ├── go.mod
+│   ├── go.sum
 │   ├── handler_error.go
 │   ├── handler_feed.go
 │   ├── handler_feed_follows.go
@@ -52,10 +54,9 @@ RSSagg/
 ├── .gitignore
 ├── Dockerfile
 ├── docker-compose.yaml
-├── go.mod
-├── go.sum
 ├── LICENSE
-└── README.md
+├── README.md
+└── .env.example
 ```
 
 ## Getting Started
