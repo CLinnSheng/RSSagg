@@ -1,0 +1,23 @@
+version: "3.9"
+
+services: # Containers
+  go-app: # Service
+    container_name: go-app # Container name
+    image: go-app:1.0
+    build: .
+    ports: # Port mapping
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DB_URL: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@go_db:5432/${POSTGRES_DB}?sslmode=disable"
+    depends_on:
+      - go_db
+
+  go_db: # Service
+    container_name: go_db # Container name
+    image: postgres # Image
+    env_file:
+      - .env
+    ports: # Port mapping
+      - "5432:5432"
